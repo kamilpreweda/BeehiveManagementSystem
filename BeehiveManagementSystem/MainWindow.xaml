@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BeehiveManagementSystem"
         mc:Ignorable="d"
-        Title="System zarządzania rojem" Height="450" Width="800">
+        Title="System zarządzania rojem" Height="325" Width="625">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Przydzielane funkcje" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="20,20,20,20">
+            <ComboBox x:Name="jobSelector" FontSize="18" Margin="20,0,20,20">
+                <ListBoxItem Content="Zbieraczka nektaru" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ListBoxItem Content="Producentka miodu" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ListBoxItem Content="Opiekunka jaj" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ComboBox>
+            <Button x:Name="AssignJob" Content="Przydziel funkcje pszczole" FontSize="18" Click="AssignJob_Click"/>
+        </StackPanel>
+        <Button x:Name="WorkShift" Content="Następna zmiana" Margin="20,20,20,20" Grid.Row="2" FontSize="18" Click="WorkShift_Click"/>
+        <Label Grid.Column="1" Content="Raport dla królowej" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
+        <TextBox x:Name="statusReport" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" FontSize="18" Grid.RowSpan="2" Margin="20,20,20,21"/>
 
     </Grid>
 </Window>
