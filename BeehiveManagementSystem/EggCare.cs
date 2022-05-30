@@ -8,9 +8,11 @@ namespace BeehiveManagementSystem
 {
     public class EggCare : Bee
     {
-        public EggCare() : base("Opiekunka jaj")
-        {
+        private Queen queen;
 
+        public EggCare(Queen queen) : base("Opiekunka jaj")
+        {
+            this.queen = queen;
         }
 
         protected override void DoJob()
