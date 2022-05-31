@@ -8,6 +8,7 @@ namespace BeehiveManagementSystem
 {
     public class EggCare : Bee
     {
+        public const float CARE_PROGRESS_PER_SHIFT = 0.15f;
         private Queen queen;
 
         public EggCare(Queen queen) : base("Opiekunka jaj")
@@ -17,7 +18,7 @@ namespace BeehiveManagementSystem
 
         protected override void DoJob()
         {
-            base.DoJob();
+            queen.CareForEggs(CARE_PROGRESS_PER_SHIFT);
         }
 
         public override float CostPerShift => 1.35f;

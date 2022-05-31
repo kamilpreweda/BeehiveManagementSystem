@@ -50,7 +50,7 @@ namespace BeehiveManagementSystem
             }
         }
 
-        private void AssignBee(string job)
+        public void AssignBee(string job)
         {
             switch (job)
             {
@@ -70,7 +70,7 @@ namespace BeehiveManagementSystem
 
         }
 
-        private void CareForEggs(float eggsToConvert)
+        public void CareForEggs(float eggsToConvert)
         {
             if (eggs >= eggsToConvert)
             {
