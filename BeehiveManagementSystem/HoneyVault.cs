@@ -17,7 +17,7 @@ namespace BeehiveManagementSystem
         public static string StatusReport
         {  get
             {
-                string status = $"JEdnostki miodu: {honey:0.0}\n" +
+                string status = $"Jednostki miodu: {honey:0.0}\n" +
                                 $"Jednostki nektaru: {nectar:0.0}";
                 string warnings = "";
                 if (honey < LOW_LEVEL_WARNING) warnings += "\nNISKI POZIOM MIODU! DODAJ PRODUCENTKĘ MIODU!";
@@ -31,7 +31,7 @@ namespace BeehiveManagementSystem
             float NectarToConvert = amount;
             if (NectarToConvert > nectar) NectarToConvert = nectar;
             nectar -= NectarToConvert;
-            honey = (NectarToConvert * NECTAR_CONVERSION_RATIO);
+            honey += NectarToConvert * NECTAR_CONVERSION_RATIO;
         }
 
         public static bool ConsumeHoney(float amount)

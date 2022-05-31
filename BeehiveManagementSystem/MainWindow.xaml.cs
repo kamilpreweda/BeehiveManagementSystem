@@ -31,12 +31,14 @@ namespace BeehiveManagementSystem
 
         private void AssignJob_Click(object sender, RoutedEventArgs e)
         {
+            statusReport.Text = "";
             queen.AssignBee(jobSelector.Text);
             statusReport.Text += queen.StatusReport;
         }
 
         private void WorkShift_Click(object sender, RoutedEventArgs e)
         {
+            statusReport.Text = "";
             queen.WorkTheNextShift();
             statusReport.Text += queen.StatusReport;
         }

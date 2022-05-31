@@ -83,7 +83,7 @@ namespace BeehiveManagementSystem
             StatusReport = $"Raport o stanie skarbca: \n" +
                             $"{HoneyVault.StatusReport}\n" +
                             $"Liczba jaj: {eggs:0.0}\n" +
-                            $"Nieprzydzielone robotnice: {unassignedWorkers:0.0}" +
+                            $"Nieprzydzielone robotnice: {unassignedWorkers:0.0}\n" +
                             $"{WorkerStatus("Zbieraczka nektaru")}\n" +
                             $"{WorkerStatus("Producentka miodu")}\n" +
                             $"{WorkerStatus("Opiekunka jaj")}\n" +
