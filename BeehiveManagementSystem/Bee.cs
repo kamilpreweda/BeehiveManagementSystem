@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BeehiveManagementSystem
 {
-    public class Bee
+    public abstract class Bee
     {
 
-        public virtual float CostPerShift { get; }
+        public abstract float CostPerShift { get; }
         public string Job { get; private set; }
         public Bee(string job)
         {
@@ -24,6 +24,7 @@ namespace BeehiveManagementSystem
             }
         }
 
-        protected virtual void DoJob() { /* przesłaniana w podklasie */ }
+        protected abstract void DoJob();
+        }
     }
-}
+
