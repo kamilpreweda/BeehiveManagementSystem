@@ -11,7 +11,7 @@ namespace BeehiveManagementSystem
         public const float EGGS_PER_SHIFT = 0.45f;
         public const float HONEY_PER_UNASSIGNED_WORKER = 0.5f;
 
-        private Bee[] workers = new Bee[0];
+        private IWorker[] workers = new IWorker[0];
         private float unassignedWorkers = 3;
         private float eggs = 0;
 
@@ -40,7 +40,7 @@ namespace BeehiveManagementSystem
         ///     Zwiększanie tablicy workers o jedno miejsce i dodanie referencji typu Bee
         /// </summary>
         /// <param name="worker">Robotnica dodawana do tablicy workers</param>
-        private void AddWorker(Bee worker)
+        private void AddWorker(IWorker worker)
         {
             if (unassignedWorkers >= 1)
             {
@@ -94,7 +94,7 @@ namespace BeehiveManagementSystem
         private string WorkerStatus(string job)
         {
             int count = 0;
-            foreach(Bee worker in workers)
+            foreach(IWorker worker in workers)
                 if (worker.Job == job) count++;
             return $"{job}: {count}";
 
