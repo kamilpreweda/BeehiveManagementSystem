@@ -9,7 +9,7 @@
     <Window.Resources>
         <local:Queen x:Key="queen"/>
     </Window.Resources>
-    <Grid>
+    <Grid DataContext="{StaticResource queen}">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="4*"/>
@@ -30,7 +30,7 @@
         </StackPanel>
         <Button x:Name="WorkShift" Content="Następna zmiana" Margin="20,20,20,20" Grid.Row="2" FontSize="18" Click="WorkShift_Click"/>
         <Label Grid.Column="1" Content="Raport dla królowej" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
-        <TextBox x:Name="statusReport" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" FontSize="18" Grid.RowSpan="2" Margin="20,20,20,21"/>
+        <TextBox Text="{Binding StatusReport, Mode=OneWay}" x:Name="statusReport" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" FontSize="18" Grid.RowSpan="2" Margin="20,20,20,21"/>
 
     </Grid>
 </Window>
