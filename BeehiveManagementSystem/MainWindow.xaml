@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:BeehiveManagementSystem"
         mc:Ignorable="d"
         Title="System zarządzania rojem" Height="325" Width="625">
+    <Window.Resources>
+        <local:Queen x:Key="queen"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
