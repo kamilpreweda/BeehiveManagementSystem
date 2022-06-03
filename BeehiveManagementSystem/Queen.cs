@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace BeehiveManagementSystem
 {
-    public class Queen : Bee
+    public class Queen : Bee, INotifyPropertyChanged
     {
         public const float EGGS_PER_SHIFT = 0.45f;
         public const float HONEY_PER_UNASSIGNED_WORKER = 0.5f;
@@ -14,6 +15,13 @@ namespace BeehiveManagementSystem
         private IWorker[] workers = new IWorker[0];
         private float unassignedWorkers = 3;
         private float eggs = 0;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         public string StatusReport { get; private set; }
         public Queen() : base("Królowa")
@@ -88,6 +96,7 @@ namespace BeehiveManagementSystem
                             $"{WorkerStatus("Producentka miodu")}\n" +
                             $"{WorkerStatus("Opiekunka jaj")}\n" +
                             $"ROBOTNICE W SUMIE: {workers.Length}";
+            OnPropertyChanged("StatusReport");
 
         }
 
